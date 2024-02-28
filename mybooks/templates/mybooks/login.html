@@ -1,0 +1,46 @@
+{% extends "mybooks/index.html" %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+ 
+</head>
+<body>
+  <div class="row">
+    <col-12>
+<img src="{% static 'image/login.jpg' %}" style="width: 100%; height: 590px; opacity: 0.7;" alt="">
+<div class="login" style="position: absolute;left:500px ;top: 250px;">
+    <form onsubmit="return validatelogin()" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="exampleInputEmail1" style="color: white;">Email address</label>
+          <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" name="email">
+          <small id="emailHelp" class=" text-white">We'll never share your email with anyone else.</small>
+          <!-- form-text text-muted -->
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1" style="color: white;">Password</label>
+          <input type="password" class="form-control" id="pswrd" placeholder="Password" name="password">
+        </div>
+        <div class="form-group form-check">
+        
+            
+          <label class="form-check-label" for="exampleCheck1" style="color: white;"><a style="color: white;" href="{% url 'mybooks:register'%}">create new account</a></label>
+        </div>
+        <p id="message" style="color: red;">{{msg}}</p>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+</div>
+
+  
+  </col-12>
+  </div>
+ 
+</body>
+</html>
+
+{% endblock %}

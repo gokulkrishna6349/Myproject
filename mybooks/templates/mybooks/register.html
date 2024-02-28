@@ -1,0 +1,73 @@
+{% extends "mybooks/index.html" %}
+{% load static %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="row">
+    <col-12>
+    <img src="{% static 'image/regpage2.jpg' %}" style="width: 100%; height: 590px;opacity: 0.7;" alt="">
+
+<!-- <div
+  id="carouselVideoExample"
+  class="carousel slide carousel-fade"
+  data-mdb-ride="carousel"
+>
+  
+ <div class="carousel-inner">
+ 
+    <div class=>
+      <video class="img-fluid" autoplay loop muted>
+        <source src="https://mdbcdn.b-cdn.net/img/video/Tropical.mp4" type="video/mp4" />
+      </video>
+      <div class="carousel-caption d-none d-md-block">
+       
+      </div>
+    </div>
+  </div>
+</div> -->
+<div class="regnow">
+    <div class="login" style="margin-left: 0px; position: absolute;left:430px ;top: 250px;">
+        <form onsubmit="return validateregister()" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+              <label for="exampleInputEmail1" style="color: white;">enter your email address</label>
+              <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" name="email">
+              <small id="emailHelp" class="form-text text-white"  >We'll never share your email with anyone else.</small>
+             
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1" style="color: white;">Password</label>
+              <input type="password" class="form-control" id="pswd1" placeholder="Password" name="pswd1">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1" style="color: white;">Confirm password</label>
+                <input type="password" class="form-control" id="pswd2" placeholder="Password" >
+              </div>
+            <div class="form-group form-check">
+            
+                
+              <label class="form-check-label" for="exampleCheck1" style="color: white;"><div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault"><a style="color: white;" href="">By creating an account you agree to our Terms & Privacy.</a>
+                
+              
+            <p id="msg" style="color: red;"></p>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+    </div>
+    
+</div>
+</col-12>
+</div>
+
+</body>
+</html>
+
+{% endblock %}

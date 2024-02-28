@@ -1,0 +1,56 @@
+{% extends "mybooks/index.html" %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.1/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+<style>
+
+</style>
+<body>
+        <div class="container-fluid">
+            <div class="row" style="background-color: black;">
+                <div class="col-2"></div>
+                <div class="col-10">
+                    <h2 style="color: white;" >add book</h2> <br>
+                </div>
+            </div>
+            <div class="row" style="background-color: black;">
+                <div class="col-2"></div>
+                <div class="col-8">
+                 
+                    <form method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="form-group">
+                          <label for="exampleInputEmail1" class="text-light">Name of the book</label>
+                          <input type="text" name="text1" class="form-control" id="exampleInputbookname"  placeholder="Enter bookname">
+                        </div>
+                                        
+                        <div class="form-group">
+                            <label for="exampleInputtext1" class="text-light">add description</label>
+                            <input type="text" name="text2" class="form-control" id="exampleInputtext1" placeholder="add description">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="examplefile" class="text-light">upload img</label>
+                            <input type="file" name="file1" class="form-control" id="exampleInputfile" placeholder="add file">
+                          </div>    
+
+                        <button style="margin-top: 6px;" type="submit" class="btn btn-primary">Submit</button>
+                        <br>
+                        <h1 style="color: black;">dajakfja</h1>
+                      </form>
+                </div>
+            </div>
+        </div>
+</body>
+</html>
+
+{% endblock %}

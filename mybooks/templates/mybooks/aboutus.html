@@ -1,0 +1,392 @@
+{% extends "mybooks/index.html" %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<!-- <html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="row">
+  <col-12 style="background-image: url('https://wallpapers.com/downloads/high/old-library-books-drawing-ulme7n8ce4bsuabu.webp'); width: 100%; height: 540px;">
+  <h1 style="color: rgb(255, 255, 255); margin-left: 550px; margin-top: 30px;">ABOUT US</h1>
+  <p style="color: rgb(255, 255, 255);margin-left: 570px;">welcome to yours fav <br>books website</p>
+  <div id="contact" style="display: none; margin-left: 570px;">
+    <p style="color: white; ">
+      add your fav books here for free <br>
+      connect us on <br> Mybooks@gmail.com</p>
+      <div>
+
+      </div>
+
+  </div>
+  <button class="btn btn-outline-success " id="read" style="margin-left: 570px;">Read more</button> -->
+  <!-- <div class="row">
+    <img src="{% static 'image/reading.png' %}" style="width: 300px; height: 300px;" alt="...">
+  
+  </div> -->
+  <!-- </col-12>
+  </div> -->
+  <!DOCTYPE html>
+  <html>
+  <style>
+    * {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* Global Styles */
+
+body {
+	font-family: Arial, sans-serif;
+}
+
+/* Header */
+
+header {
+	background-color: white;
+	color: rgb(0, 0, 0);
+	padding: 10px 0;
+	position: fixed;
+	width: 100%;
+	z-index: 100;
+	box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 5px auto;
+	padding: 0 20px;
+}
+
+.logo {
+	font-size: 1.5rem;
+	font-weight: bold;
+	color: #40b736;
+}
+
+.nav-links {
+	list-style: none;
+	display: flex;
+}
+
+.nav-links li {
+	margin-right: 20px;
+}
+
+.nav-links a {
+	color: rgb(0, 0, 0);
+	padding: 10px;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.nav-links a:hover {
+	background-color: #00eeff;
+	border-radius: 4px;
+	color: white;
+}
+
+/* About Section */
+
+.about {
+	background: rgb(0, 204, 255);
+	background: linear-gradient(360deg, rgb(141, 177, 207) 0%, rgb(173, 252, 163) 100%);
+	padding: 100px 0 20px 0;
+	text-align: center;
+}
+
+.about h1 {
+	font-size: 2.5rem;
+	margin-bottom: 20px;
+}
+
+.about p {
+	font-size: 1rem;
+	color: #323030;
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+.about-info {
+	margin: 2rem 2rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: left;
+}
+
+.about-img {
+	width: 20rem;
+	height: 20rem;
+
+}
+
+.about-img img {
+	width: 100%;
+	height: 100%;
+	border-radius: 5px;
+	object-fit: contain;
+}
+
+.about-info p {
+	font-size: 1.3rem;
+	margin: 0 2rem;
+	text-align: justify;
+}
+
+button {
+	border: none;
+	outline: 0;
+	padding: 10px;
+	margin: 2rem;
+	font-size: 1rem;
+	color: white;
+	background-color: #40b736;
+	text-align: center;
+	cursor: pointer;
+	width: 15rem;
+	border-radius: 4px;
+}
+
+button:hover {
+	background-color: #1f9405;
+}
+
+/* Team Section */
+
+.team {
+	padding: 30px 0;
+	text-align: center;
+}
+
+.team h1 {
+	font-size: 2.5rem;
+	margin-bottom: 20px;
+}
+
+.team-cards {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 15px;
+	margin-top: 20px;
+}
+
+.card {
+	background-color: white;
+	border-radius: 6px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+	overflow: hidden;
+	transition: transform 0.2s, box-shadow 0.2s;
+	width: 18rem;
+	height: 25rem;
+	margin-top: 10px;
+}
+
+.card:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5);
+}
+
+.card-img {
+	width: 18rem;
+	height: 12rem;
+}
+
+.card-img img {
+	width: 100%;
+	height: 100%;
+	object-fit: fill;
+}
+
+.card-info button {
+	margin: 2rem 1rem;
+}
+
+.card-name {
+	font-size: 2rem;
+	margin: 10px 0;
+}
+
+.card-role {
+	font-size: 1rem;
+	color: #888;
+	margin: 5px 0;
+}
+
+.card-email {
+	font-size: 1rem;
+	color: #555;
+}
+
+/* Footer */
+footer {
+	background-color: #222;
+	color: white;
+	text-align: center;
+	padding: 20px 0;
+}
+
+@media (max-width: 768px) {
+	nav {
+		display: block;
+	}
+
+	.logo {
+		text-align: center;
+	}
+
+	.nav-links {
+		margin-top: 1rem;
+		justify-content: space-between;
+	}
+
+	.nav-links li {
+		margin-right: 0;
+	}
+
+	.about h1 {
+		font-size: 2rem;
+	}
+
+	.about p {
+		font-size: 0.9rem;
+	}
+
+	.about-info {
+		flex-direction: column;
+		text-align: center;
+	}
+
+	.about-img {
+		width: 60%;
+		height: 60%;
+		margin-bottom: 1rem;
+	}
+
+	.about-info p {
+		margin: 1rem 2rem;
+	}
+
+	.about-info button {
+		margin: 1rem 2rem;
+		width: 10rem;
+	}
+
+	.team {
+		margin: 0 1rem;
+	}
+}
+
+  </style>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+      href="style.css">
+    <title>About Us</title>
+  </head>
+  
+  <body>
+    <header>
+      <nav>
+        <div class="logo">
+       
+       <img src="{% static 'image/mybooks1.png' %}"  width="230px" height="35px" alt="">
+        </div>
+        
+      </nav>
+    </header>
+  
+    <section class="about">
+      <h1>About Us</h1>
+      <p style="font-weight: bold">
+      Mybooks is a free platform ...
+      </p>
+      <div class="about-info">
+        <div class="about-img">
+          <img src=
+  "https://img.freepik.com/premium-photo/boy-reading-book-dark-room-with-books-floor-illustration_933169-157.jpg?w=360" alt="Geeksforgeeks">
+        </div>
+        <div>
+        <p> Mybooks is a leading platform
+          that provides our users free books .
+          Also we provide an option for users to add your 
+          fav books for free so that others can also 
+          read . also you can add your book to liked section,
+          so you can read later
+        </p>
+          <button style="background-color: #000000; color: rgb(255, 255, 255);">Read More...</button>
+        </div>
+      </div>
+    </section>
+  
+    <section class="team">
+      <h1>Meet Our CEO</h1>
+      <div class="team-cards">
+      
+        
+      
+        <!-- <div class="card">
+          <div class="card-img">
+            <img src=
+            "https://media.geeksforgeeks.org/wp-content/uploads/20230824122630/
+             business-office-business-woman-professional.jpg" alt="User 1">
+          </div>
+          <div class="card-info">
+            <h2 class="card-name">Jane</h2>
+            <p class="card-role">CEO and Founder</p>
+            <p class="card-email">jane@example.com</p>
+            <p><button class="button">Contact</button></p>
+          </div>
+        </div> -->
+  
+        
+      
+        <!-- <div class="card">
+          <div class="card-img">
+            <img src=
+             "https://media.geeksforgeeks.org/wp-content/uploads/20230822183347/
+              man-portrait-businessman-male.jpg" alt="User 2">
+          </div>
+          <div class="card-info">
+            <h2 class="card-name">Miller</h2>
+            <p class="card-role">Co-Founder</p>
+            <p class="card-email">Miller@example.com</p>
+            <p><button class="button">Contact</button></p>
+          </div>
+        </div> -->
+      
+        
+        <div class="card">
+          <div class="card-img">
+            <img src=
+  "https://media.geeksforgeeks.org/wp-content/uploads/20230824122630/
+  business-office-business-woman-professional.jpg" alt="User 3">
+          </div>
+          <div class="card-info">
+            <h2 class="card-name">Gokul krishna</h2>
+            <p class="card-role">Founder</p>
+            <p class="card-email">mybooks@gmail.com</p>
+            <p><button class="button">Contact : 6282xx6x4x</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    
+  </body>
+  
+  </html>
+  
+</body>
+</html>
+
+{% endblock %}
