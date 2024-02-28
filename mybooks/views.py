@@ -49,7 +49,7 @@ def add_to_liked (request,bid):
         book,created=liked.objects.get_or_create(book=books)
         if not created:
             book.save()
-    return redirect("mybooks:like")
+    return redirect("mybooks:seeallbooks")
 def remove (request,bid):
     liked.objects.get(id=bid).delete()
     return redirect('mybooks:like')
